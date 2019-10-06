@@ -1,7 +1,7 @@
 WITH film_dur_table AS (
      SELECT
            f.title film_title,
-        c.name film_category,
+           c.name film_category,
            f.rental_duration rental_duration,
            NTILE(4) OVER (ORDER BY f.rental_duration) AS standard_quartile
 FROM film f
@@ -13,9 +13,9 @@ FROM film f
     
 SELECT
          film_title,
-           film_category,
-            rental_duration,
-            Standard_quartile
+         film_category,
+         rental_duration,
+         Standard_quartile
 FROM film_dur_table
 WHERE film_category IN ('Animation' ,'Children', 'Classics', 'Comedy', 'Family', 'Music')
      GROUP BY 1, 2, 3, 4

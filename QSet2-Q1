@@ -1,0 +1,16 @@
+--Project 1, Question Set 2, Question 1
+
+SELECT 
+		DATE_PART('month', r.rental_date)Rental_month,
+		DATE_PART('year', r.rental_date) Rental_year,
+		s.store_ID store_ID,
+		COUNT(*)
+	
+	FROM rental r
+		JOIN inventory i
+		ON r.inventory_id = i.inventory_id
+		JOIN store s
+		ON s.store_id = i.store_id
+		
+	GROUP BY 1, 2, 3
+	ORDER BY 2, 1

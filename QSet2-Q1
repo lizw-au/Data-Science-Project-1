@@ -1,5 +1,4 @@
 --Project 1, Question Set 2, Question 1
-
 SELECT 
 		DATE_PART('month', r.rental_date)Rental_month,
 		DATE_PART('year', r.rental_date) Rental_year,
@@ -13,4 +12,4 @@ SELECT
 		ON s.store_id = i.store_id
 		
 	GROUP BY 1, 2, 3
-	ORDER BY 2, 1
+	ORDER BY 4 DESC;
